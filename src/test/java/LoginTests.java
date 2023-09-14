@@ -22,20 +22,28 @@ public class LoginTests extends BaseTest {
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url);
 
-        WebElement registration = driver.findElement(By.xpath("//div/a"));
-        registration.click();
+        WebElement login = driver.findElement(By.cssSelector("[type='email']"));
+        login.sendKeys("demo@gmail.com");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        WebElement email = driver.findElement(By.cssSelector("[name='email']"));
-        email.sendKeys("fgfgf@gmail.com");
+        WebElement password = driver.findElement(By.cssSelector("[type='password']"));
+        password.sendKeys("te$t$tudent");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         WebElement submit = driver.findElement(By.cssSelector("[type='submit']"));
         submit.click();
 
+@Test
+        public void loginEmailPassword(){
+            {
 
-        driver.quit();
+            }
+        }
+
+        //driver.quit();
+
+
     }
 }
